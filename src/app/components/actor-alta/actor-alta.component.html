@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div>
+        <h2>Cargar Actor</h2>
+        <div>
+          <label>Nombre:</label
+          ><input class="form-control" [(ngModel)]="firstName" />
+        </div>
+        <div>
+          <label>Apellido:</label
+          ><input class="form-control" [(ngModel)]="lastName" />
+        </div>
+        <div>
+          <label>Fecha De Nacimiento:</label
+          ><input
+            type="date"
+            class="form-control"
+            [(ngModel)]="dateOfBirth"
+            (change)="handleDateChange($event)"
+          />
+        </div>
+        <div>
+          <label>Genero:</label>
+          <select (change)="getGenderValue($event.target.value)">
+            <option value="NA">--Seleccione--</option>
+            <option ngValue="1" value="Masculino">Masculino</option>
+            <option ngValue="2" value="Femenino">Femenino</option>
+          </select>
+        </div>
+        <div>
+          <label>Foto:</label
+          ><input
+            type="file"
+            class="form-control"
+            [(ngModel)]="photoUrl"
+            (change)="handleFileInput($event.target.files)"
+          />
+        </div>
+        <p>
+          <a class="btn btn-secondary" role="button" (click)="uploadNewActor()"
+            >Guardar</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

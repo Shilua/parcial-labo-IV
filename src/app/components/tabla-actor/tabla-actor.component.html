@@ -1,0 +1,22 @@
+<div class="container">
+  <table class="table table-striped">
+    <tbody>
+      <tr *ngFor="let actor of actorsCollection" (click)="selectActor(actor)">
+        <td>
+          <img [src]="actor.foto" alt="" style="width: 100px; height: 100px" />
+        </td>
+        <td>{{ actor.data.nombre }}</td>
+        <td>{{ actor.data.apellido }}</td>
+        <td>{{ actor.data.sexo }}</td>
+        <td>
+          {{
+            this.datepipe.transform(
+              actor.data.fechaDeNacimiento.toDate(),
+              "dd/MM/yyyy"
+            )
+          }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

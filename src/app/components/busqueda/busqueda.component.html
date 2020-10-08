@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main role="main">
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Listado de Elementos</h1>
+          <app-tabla-pelicula
+            [showUpdateAndDeleteControls]="isFullControls"
+            [moviesCollection]="elementos"
+            (deleteEmitter)="handleSelectElementForDelete($event)"
+            (modifyEmitter)="handleSelectElementForEdit($event)"
+            (viewEmitter)="handleSelectElementForView($event)"
+          ></app-tabla-pelicula>
+        </div>
+      </div>
+      <hr />
+      <div class="container">
+        <div class="row">
+          <app-modificar
+            [inputElementToModify]="elementToModify"
+            (outputModifiedElement)="getUpdatedCollection()"
+            class="col-md"
+          ></app-modificar>
+          <app-detalle
+            [inputShowDelete]="isSearch"
+            [inputElementToView]="elementToView"
+            class="col-md"
+          ></app-detalle>
+          <app-borrar
+            [inputElementToDelete]="elementToDelete"
+            (outputDeletedElement)="getUpdatedCollection()"
+            class="col-md"
+          ></app-borrar>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

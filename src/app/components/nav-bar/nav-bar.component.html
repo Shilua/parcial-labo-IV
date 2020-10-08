@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"></a>
+
+  <button
+    class="navbar-toggler navbar-toggler-right"
+    type="button"
+    aria-controls="appNavigation"
+    aria-expanded="!isCollapsed"
+    aria-label="Toggle navigation"
+    (click)="toggleMenu()"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse"
+    id="appNavigation"
+    [ngbCollapse]="isCollapsed"
+  >
+    <div class="navbar-nav mr-auto">
+      <a
+        (click)="toggleMenu()"
+        class="nav-item nav-link"
+        routerLink=""
+        routerLinkActive="active"
+        >Inicio</a
+      >
+
+      <div class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="dropdownSede" ngbDropdownToggle
+          >Peliculas</a
+        >
+        <div
+          class="dropdown-menu"
+          ngbDropdownMenu
+          aria-labelledby="dropdownSede"
+        >
+          <a
+            class="dropdown-item"
+            routerLink="/busqueda"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+            >Búsqueda</a
+          >
+          <a
+            class="dropdown-item"
+            routerLink="/alta-pelicula"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+            >Nueva Pelicula</a
+          >
+          <a
+            class="dropdown-item"
+            routerLinkActive="active"
+            routerLink="/listado-peliculas"
+            (click)="toggleMenu()"
+            >Listado</a
+          >
+        </div>
+      </div>
+      <div class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="dropdownActor" ngbDropdownToggle
+          >Actores</a
+        >
+        <div
+          class="dropdown-menu"
+          ngbDropdownMenu
+          aria-labelledby="dropdownActor"
+        >
+          <a
+            class="dropdown-item"
+            routerLink="/alta-actor"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+            >Nuevo</a
+          >
+          <a
+            class="dropdown-item"
+            routerLinkActive="active"
+            routerLink="/listado-actores"
+            (click)="toggleMenu()"
+            >Listado</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

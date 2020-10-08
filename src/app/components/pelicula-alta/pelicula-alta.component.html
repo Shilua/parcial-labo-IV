@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div>
+        <h2>Cargar Pelicula</h2>
+        <div>
+          <label>Nombre:</label
+          ><input class="form-control" [(ngModel)]="movieName" />
+        </div>
+        <div>
+          <label>Genero:</label>
+          <br />
+          <select (change)="getMovieTypeValue($event.target.value)">
+            <option>--Seleccione--</option>
+            <option [value]="movieTypesEnum.TERROR">
+              {{ movieTypesLabels[movieTypesEnum.TERROR] }}
+            </option>
+            <option [value]="movieTypesEnum.COMEDIA">
+              {{ movieTypesLabels[movieTypesEnum.COMEDIA] }}
+            </option>
+            <option [value]="movieTypesEnum.ROMANCE">
+              {{ movieTypesLabels[movieTypesEnum.ROMANCE] }}
+            </option>
+            <option [value]="movieTypesEnum.OTROS">
+              {{ movieTypesLabels[movieTypesEnum.OTROS] }}
+            </option>
+          </select>
+        </div>
+        <div>
+          <label>Fecha De Estreno:</label
+          ><input
+            type="date"
+            class="form-control"
+            [(ngModel)]="releaseDate"
+            (change)="handleDateChange($event)"
+          />
+        </div>
+        <div>
+          <label>Cantidad de Publico:</label
+          ><input
+            type="number"
+            class="form-control"
+            [(ngModel)]="spectatorCount"
+          />
+        </div>
+
+        <div>
+          <label>Foto:</label
+          ><input
+            type="file"
+            class="form-control"
+            [(ngModel)]="photoUrl"
+            (change)="handleFileInput($event.target.files)"
+          />
+        </div>
+        <p>
+          <a class="btn btn-secondary" role="button" (click)="uploadNewMovie()"
+            >Guardar</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <app-tabla-actor
+        (selectedActor)="handleActorSelection($event)"
+        [actorsCollection]="dbActors"
+      ></app-tabla-actor>
+    </div>
+  </div>
+</div>

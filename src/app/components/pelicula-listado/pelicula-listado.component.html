@@ -1,0 +1,10 @@
+<app-tabla-pelicula
+  [moviesCollection]="elementos"
+  (deleteEmitter)="handleSelectElementForDelete($event)"
+  (viewEmitter)="handleSelectElementForView($event)"
+></app-tabla-pelicula>
+<app-detalle
+  [inputShowDelete]="isSearch"
+  [inputElementToView]="elementToView"
+  (outputDeletedElement)="getUpdatedCollection()"
+></app-detalle>
