@@ -15,7 +15,7 @@ export class TablaActorComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  selectActor(actor) {
+  selectActor(actor: Actor) {
     this.selectedActor.emit(actor);
   }
 }

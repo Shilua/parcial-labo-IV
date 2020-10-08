@@ -51,7 +51,7 @@ export class ModificarComponent implements OnInit {
     );
   }
 
-  modifyElement(inputElementToModify) {
+  modifyElement(inputElementToModify: any) {
     try {
       this.movieService.modifyElement(
         {
@@ -77,11 +77,11 @@ export class ModificarComponent implements OnInit {
     }
   }
 
-  handleFileInput(files: FileList) {
+  handleImagen(files: FileList) {
     this.fileToUpload = files.item(0);
   }
 
-  getMovieTypeValue(value) {
+  getMovieTypeValue(value) : any {
     this.movieType = value;
   }
 }

@@ -18,17 +18,17 @@ export class ActorsService {
     return this.fireStorage.storage.ref(`actores/${id}.jpg`).getDownloadURL();
   }
 
-  createElement(targetElement, photo) {
+  createElement(actor: any, photo: any) {
     if (photo) {
       const file = photo;
       const randomId = Math.random().toString(36).substring(2);
-      targetElement.foto = randomId;
+      actor.foto = randomId;
       const fileRef = this.fireStorage.storage.ref(`actores/${randomId}.jpg`);
       fileRef.put(file);
     } else {
-      targetElement.foto = 'placeholder';
+      actor.foto = 'placeholder';
     }
-    targetElement.isActive = true;
-    this.firestore.collection('actores').add(targetElement);
+    actor.isActive = true;
+    this.firestore.collection('actores').add(actor);
   }
 }

@@ -55,7 +55,7 @@ import { ActorListadoComponent } from './components/actor-listado/actor-listado.
     AngularFireStorageModule,
     FormsModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [MoviesService, DatePipe, ActorsService],
   bootstrap: [AppComponent],

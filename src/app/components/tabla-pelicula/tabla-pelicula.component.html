@@ -1,7 +1,7 @@
 <div class="container grid">
   <div class="wrapper" *ngFor="let movie of moviesCollection">
     <div class="card mb-4 shadow-sm">
-      <img [src]="movie.movieUrl" alt="" style="width: 200px; height: 100px" />
+      <img [src]="movie.movieUrl" alt="" style="width: 250px; height: 300px" />
       <div class="card-body">
         <p class="card-text">
           {{ movie.data.nombre }}
@@ -11,14 +11,14 @@
             <button
               *ngIf="showUpdateAndDeleteControls"
               type="button"
-              class="btn btn-sm btn-outline-secondary"
+              class="btn btn-sm btn-outline-success"
               (click)="emitDelete(movie)"
             >
               Borrar
             </button>
             <button
               type="button"
-              class="btn btn-sm btn-outline-secondary"
+              class="btn btn-sm btn-outline-success"
               (click)="emitView(movie)"
             >
               Detalle
@@ -26,7 +26,7 @@
             <button
               *ngIf="showUpdateAndDeleteControls"
               type="button"
-              class="btn btn-sm btn-outline-secondary"
+              class="btn btn-sm btn-outline-success"
               (click)="emitModify(movie)"
             >
               Modificar

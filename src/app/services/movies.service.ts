@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {
-  AngularFirestore,
-  AngularFirestoreDocument,
+  AngularFirestore
 } from '@angular/fire/firestore';
 import { AngularFireStorage } from '@angular/fire/storage';
 
@@ -16,53 +15,45 @@ export class MoviesService {
 
   getElements() {
     return this.firestore.collection('peliculas').ref;
-    // .onSnapshot((snapshot) => {
-    //    snapshot.docs.map((element: any) => {
-    //      this.elementos.push({
-    //        id: element.id,
-    //        data: element.data(),
-    //      });
-    //    });
-    // });
   }
 
-  deleteElement(targetElement) {
+  deleteElement(movie: any) {
     this.firestore
       .collection('peliculas')
-      .doc(targetElement)
+      .doc(movie)
       .update({ isActive: false });
   }
 
-  modifyElement(targetElement, fileToUpload) {
-    if (fileToUpload) {
-      const file = fileToUpload;
+  modifyElement(movie :any, imageToUpload: any) {
+    if (imageToUpload) {
+      const file = imageToUpload;
       const randomId = Math.random().toString(36).substring(2);
-      targetElement.data.fotoDeLaPelicula = randomId;
+      movie.data.fotoDeLaPelicula = randomId;
       const fileRef = this.fireStorage.storage.ref(`peliculas/${randomId}.jpg`);
       fileRef.put(file);
     }
 
-    this.firestore.collection('peliculas').doc(targetElement.id).update({
-      nombre: targetElement.data.nombre,
-      tipo: targetElement.data.tipo,
-      cantidadDePublico: targetElement.data.cantidadDePublico,
-      fotoDeLaPelicula: targetElement.data.fotoDeLaPelicula,
-      fechaDeEstreno: targetElement.data.fechaDeEstreno,
+    this.firestore.collection('peliculas').doc(movie.id).update({
+      nombre: movie.data.nombre,
+      tipo: movie.data.tipo,
+      cantidadDePublico: movie.data.cantidadDePublico,
+      fotoDeLaPelicula: movie.data.fotoDeLaPelicula,
+      fechaDeEstreno: movie.data.fechaDeEstreno,
     });
   }
 
-  createElement(targetElement, photo) {
+  createElement(movie: any, photo: any) {
     if (photo) {
       const file = photo;
       const randomId = Math.random().toString(36).substring(2);
-      targetElement.fotoDeLaPelicula = randomId;
+      movie.fotoDeLaPelicula = randomId;
       const fileRef = this.fireStorage.storage.ref(`peliculas/${randomId}.jpg`);
       fileRef.put(file);
     } else {
-      targetElement.fotoDeLaPelicula = 'placeholdermovie';
+      movie.fotoDeLaPelicula = 'placeholdermovie';
     }
-    targetElement.isActive = true;
-    this.firestore.collection('peliculas').add(targetElement);
+    movie.isActive = true;
+    this.firestore.collection('peliculas').add(movie);
   }
 
   async getMoviePhoto(id: string) {

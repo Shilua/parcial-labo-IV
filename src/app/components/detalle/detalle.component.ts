@@ -19,7 +19,6 @@ export class DetalleComponent implements OnInit {
   public photoUrl: string;
   public spectatorCount: string;
   public releaseDate: string;
-
   constructor(
     public datepipe: DatePipe,
     public movieService: MoviesService,
@@ -37,7 +36,7 @@ export class DetalleComponent implements OnInit {
       'dd/MM/yyyy'
     );
   }
-  cleanFields(): void {
+  limpiar(): void {
     this.inputElementToView = null;
     this.movieName = '';
     this.movieType = '';

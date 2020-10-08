@@ -1,13 +1,13 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: 'AIzaSyDiEVuogub3_XM940Hyefln_Fjl8WUIKm4',
-    authDomain: 'dlp-labo4.firebaseapp.com',
-    databaseURL: 'https://dlp-labo4.firebaseio.com',
-    projectId: 'dlp-labo4',
-    storageBucket: 'dlp-labo4.appspot.com',
-    messagingSenderId: '211875682513',
-    appId: '1:211875682513:web:f15683b76df564791b0df0',
-    measurementId: 'G-TLWLRHX7LN',
+    apiKey: "AIzaSyAe8Ow5fo682eI78BtQMXJUOU12C6OHpZg",
+    authDomain: "peliculasactores-61510.firebaseapp.com",
+    databaseURL: "https://peliculasactores-61510.firebaseio.com",
+    projectId: "peliculasactores-61510",
+    storageBucket: "peliculasactores-61510.appspot.com",
+    messagingSenderId: "1065368699764",
+    appId: "1:1065368699764:web:b4312b111166eb52bf2221",
+    measurementId: "G-BWQNJQT9DM"
   },
 };

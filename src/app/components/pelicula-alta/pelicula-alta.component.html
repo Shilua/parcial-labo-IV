@@ -32,7 +32,7 @@
             type="date"
             class="form-control"
             [(ngModel)]="releaseDate"
-            (change)="handleDateChange($event)"
+            (change)="handleFecha($event)"
           />
         </div>
         <div>
@@ -50,11 +50,11 @@
             type="file"
             class="form-control"
             [(ngModel)]="photoUrl"
-            (change)="handleFileInput($event.target.files)"
+            (change)="handleImagen($event.target.files)"
           />
-        </div>
+          </div>
         <p>
-          <a class="btn btn-secondary" role="button" (click)="uploadNewMovie()"
+          <a class="btn btn-success" role="button" (click)="cargarPelicula()"
             >Guardar</a
           >
         </p>
@@ -62,7 +62,7 @@
     </div>
     <div class="col-md-4">
       <app-tabla-actor
-        (selectedActor)="handleActorSelection($event)"
+        (selectedActor)="handleActores($event)"
         [actorsCollection]="dbActors"
       ></app-tabla-actor>
     </div>

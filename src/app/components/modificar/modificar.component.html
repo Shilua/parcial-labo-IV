@@ -58,13 +58,13 @@
         ><input
           class="form-control"
           type="file"
-          (change)="handleFileInput($event.target.files)"
+          (change)="handleImagen($event.target.files)"
         />
       </div>
       <p>Al presionar el boton modificar se efectuaran los cambios.</p>
       <p>
         <a
-          class="btn btn-secondary"
+          class="btn btn-success"
           role="button"
           (click)="modifyElement(inputElementToModify)"
           >Modificar</a

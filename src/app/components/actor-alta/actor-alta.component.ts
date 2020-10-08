@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ActorsService } from '../../services/actors.service';
@@ -15,26 +16,38 @@ export class ActorAltaComponent implements OnInit {
   public gender: string;
   public photoUrl: string;
   public dateOfBirth: Date = new Date();
+  public form: any;
 
   constructor(
     public actorsService: ActorsService,
     private toastr: ToastrService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {
+    /*this.form = this.formBuilder.group(
+      {
+        firstName: [''],
+        lastName: [''],
+        gender: [''],
+        photoUrl: [''],
+        //dateOfBirth: ['']
+      }
+    )*/
+  }
 
   ngOnInit(): void {}
 
-  getGenderValue(data) {
+  traerGenero(data: any) {
     this.gender = data;
   }
 
-  handleFileInput(files: FileList) {
+  handleImagen(files: FileList) {
     this.fileToUpload = files.item(0);
   }
 
-  handleDateChange(date) {}
+  handleFecha(date: any) {}
 
-  uploadNewActor() {
+  cargarActor() {
     try {
       this.actorsService.createElement(
         {
@@ -49,7 +62,11 @@ export class ActorAltaComponent implements OnInit {
       this.toastr.success('Actor Guardado');
       this.router.navigate(['/listado-actores']);
     } catch (error) {
-      this.toastr.error('Error al guardar');
+      this.toastr.error('Error al guardar ');
     }
+  }
+
+  onSubmit(f: any){
+
   }
 }

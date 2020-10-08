@@ -37,7 +37,7 @@ export class PeliculaAltaComponent implements OnInit {
     this.getUpdatedCollection();
   }
 
-  uploadNewMovie(): void {
+  cargarPelicula(): void {
     try {
       this.moviesService.createElement(
         {
@@ -75,18 +75,18 @@ export class PeliculaAltaComponent implements OnInit {
       });
   }
 
-  handleFileInput(files: FileList) {
+  handleImagen(files: FileList) {
     this.fileToUpload = files.item(0);
   }
 
-  handleDateChange(date) {}
+  handleFecha(date) {}
 
   getMovieTypeValue(value) {
     console.log(value);
     this.movieType = value;
   }
 
-  handleActorSelection(actor) {
+  handleActores(actor :any) {
     if (!this.reparto.includes(actor.id)) {
       this.toastr.success('Actor registrado en el reparto');
       this.reparto.push(actor.id);

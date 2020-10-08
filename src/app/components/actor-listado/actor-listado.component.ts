@@ -7,22 +7,22 @@ import { ActorsService } from '../../services/actors.service';
   styleUrls: ['./actor-listado.component.css'],
 })
 export class ActorListadoComponent implements OnInit {
-  public dbActors = [];
+  public actorsList = [];
   constructor(private actorsService: ActorsService) {}
 
   ngOnInit(): void {
-    this.getUpdatedCollection();
+    this.getActorList();
   }
 
-  getUpdatedCollection() {
+  getActorList() {
     this.actorsService
       .getElements()
       .get()
       .then((snapshot) => {
-        this.dbActors = [];
+        this.actorsList = [];
         snapshot.docs.map((element: any) => {
           this.actorsService.getActorPhoto(element.data().foto).then((url) => {
-            this.dbActors.push({
+            this.actorsList.push({
               id: element.id,
               data: element.data(),
               foto: url,

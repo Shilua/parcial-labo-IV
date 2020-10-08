@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <div>
+      <!--form  [formGroup]="form" (ngSubmit)="cargarActor()"-->
         <h2>Cargar Actor</h2>
         <div>
           <label>Nombre:</label
@@ -17,12 +17,13 @@
             type="date"
             class="form-control"
             [(ngModel)]="dateOfBirth"
-            (change)="handleDateChange($event)"
+            (change)="handleFecha($event)"
+            
           />
         </div>
         <div>
           <label>Genero:</label>
-          <select (change)="getGenderValue($event.target.value)">
+          <select (change)="traerGenero($event.target.value)">
             <option value="NA">--Seleccione--</option>
             <option ngValue="1" value="Masculino">Masculino</option>
             <option ngValue="2" value="Femenino">Femenino</option>
@@ -34,15 +35,16 @@
             type="file"
             class="form-control"
             [(ngModel)]="photoUrl"
-            (change)="handleFileInput($event.target.files)"
-          />
+            (change)="handleImagen($event.target.files)"
+            
+            />
         </div>
         <p>
-          <a class="btn btn-secondary" role="button" (click)="uploadNewActor()"
+          <a class="btn btn-success" type="submit" (click)="cargarActor()"
             >Guardar</a
           >
         </p>
-      </div>
+      <!--/form-->
     </div>
   </div>
 </div>

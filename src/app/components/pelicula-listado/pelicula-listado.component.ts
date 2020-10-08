@@ -13,7 +13,7 @@ export class PeliculaListadoComponent implements OnInit {
   constructor(public moviesService: MoviesService) {}
   public isSearch = true;
   ngOnInit(): void {
-    this.getUpdatedCollection();
+    this.getPeliculas();
   }
 
   handleSelectElementForDelete(pelicula) {}
@@ -21,7 +21,7 @@ export class PeliculaListadoComponent implements OnInit {
     this.elementToView = pelicula;
   }
 
-  getUpdatedCollection() {
+  getPeliculas() {
     this.moviesService
       .getElements()
       .where('isActive', '==', true)
