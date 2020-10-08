@@ -18,7 +18,7 @@ export class TablaPeliculaComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  emitView(movie: Pelicula) {
+  emitView(movie: any) {
     this.viewEmitter.emit(movie);
   }
   emitDelete(movie: Pelicula) {

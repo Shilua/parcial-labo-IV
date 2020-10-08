@@ -1,0 +1,17 @@
+<div class="container">
+    <h3>Paises</h3>
+    <table class="table table-dark">
+        <thead class="">
+            <th>Nombre</th>
+            <th>Bandera</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pais of paises" (click)="selectNationality(pais)">
+                <td>{{pais.name}}</td>
+                <td>
+                    <img [src]="pais.flag" alt="" style="height: 100px" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

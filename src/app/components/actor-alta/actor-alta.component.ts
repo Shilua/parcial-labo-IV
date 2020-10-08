@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -16,23 +16,14 @@ export class ActorAltaComponent implements OnInit {
   public gender: string;
   public photoUrl: string;
   public dateOfBirth: Date = new Date();
+  @Input() nationality: string;
   public form: any;
 
   constructor(
     public actorsService: ActorsService,
     private toastr: ToastrService,
-    private router: Router,
-    private formBuilder: FormBuilder
+    private router: Router
   ) {
-    /*this.form = this.formBuilder.group(
-      {
-        firstName: [''],
-        lastName: [''],
-        gender: [''],
-        photoUrl: [''],
-        //dateOfBirth: ['']
-      }
-    )*/
   }
 
   ngOnInit(): void {}
@@ -46,7 +37,10 @@ export class ActorAltaComponent implements OnInit {
   }
 
   handleFecha(date: any) {}
-
+  handleSelectNationality(nationality: string){
+    this.nationality = nationality;
+    console.log(this.nationality);
+  }
   cargarActor() {
     try {
       this.actorsService.createElement(

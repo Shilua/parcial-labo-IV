@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <!--form  [formGroup]="form" (ngSubmit)="cargarActor()"-->
+      <div>
         <h2>Cargar Actor</h2>
         <div>
           <label>Nombre:</label
@@ -30,6 +30,10 @@
           </select>
         </div>
         <div>
+          <label>Nacionalidad:</label
+          ><input class="form-control" [(ngModel)]="nationality" />
+        </div>
+        <!--div>
           <label>Foto:</label
           ><input
             type="file"
@@ -38,13 +42,16 @@
             (change)="handleImagen($event.target.files)"
             
             />
-        </div>
+        </div-->
         <p>
           <a class="btn btn-success" type="submit" (click)="cargarActor()"
             >Guardar</a
           >
         </p>
-      <!--/form-->
+      </div>
+    </div>
+    <div class="col-md-4">
+      <app-tabla-paises (selectedNationality)="handleSelectNationality($event)" ></app-tabla-paises>
     </div>
   </div>
 </div>

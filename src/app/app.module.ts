@@ -27,6 +27,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PeliculaListadoComponent } from './components/pelicula-listado/pelicula-listado.component';
 import { ActorAltaComponent } from './components/actor-alta/actor-alta.component';
 import { ActorListadoComponent } from './components/actor-listado/actor-listado.component';
+import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
+import { HttpClientModule } from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -44,6 +47,7 @@ import { ActorListadoComponent } from './components/actor-listado/actor-listado.
     PeliculaListadoComponent,
     ActorAltaComponent,
     ActorListadoComponent,
+    TablaPaisesComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ import { ActorListadoComponent } from './components/actor-listado/actor-listado.
     AngularFireStorageModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     ToastrModule.forRoot()
   ],
   providers: [MoviesService, DatePipe, ActorsService],
