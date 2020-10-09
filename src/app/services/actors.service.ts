@@ -32,22 +32,16 @@ export class ActorsService {
     this.firestore.collection('actores').add(actor);
   }
 
-  modifyElement(actor :any, imageToUpload: any) {
-    if (imageToUpload) {
-      const file = imageToUpload;
-      const randomId = Math.random().toString(36).substring(2);
-      actor.data.fotoDeLaPelicula = randomId;
-      const fileRef = this.fireStorage.storage.ref(`actor/${randomId}.jpg`);
-      fileRef.put(file);
-    }
+  modifyElement(actor :any) {
 
-    this.firestore.collection('actor').doc(actor.id).update({
+
+    this.firestore.collection('actores').doc(actor.id).update({
       nombre: actor.data.nombre,
       apellido: actor.data.apellido,
       Sexo: actor.data.sexo,
       fechaDeNacimiento: actor.data.fechaDeNacimiento,
       nacionalidad: actor.data.nacionalidad,
-      foto: actor.data.foto
+      foto: 'placeholder'
     });
   }
 

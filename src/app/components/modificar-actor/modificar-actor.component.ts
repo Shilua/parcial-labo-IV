@@ -37,6 +37,7 @@ export class ModificarActorComponent implements OnInit {
       this.actorToModify?.data.fechaDeNacimiento.toDate(),
       'dd/MM/yyyy'
     );
+    console.log(this.actorToModify);
     this.nationality = this.actorToModify?.data.nacionalidad;
   }
   
@@ -55,7 +56,6 @@ export class ModificarActorComponent implements OnInit {
             nacionalidad : this.nationality
           },
         },
-        this.fileToUpload
       );
       this.actorToModify = undefined;
       this.toastr.success('Cambios Guardados');
