@@ -8,7 +8,10 @@ import { ActorsService } from '../../services/actors.service';
 })
 export class ActorListadoComponent implements OnInit {
   public actorsList = [];
-  public actorToSend: any;
+  public actorToViev: any;
+  public actorToEdit: any;
+  public actorToDelete: any;
+
   constructor(private actorsService: ActorsService) {}
 
   ngOnInit(): void {
@@ -16,10 +19,10 @@ export class ActorListadoComponent implements OnInit {
   }
 
   handleViewActor(actor: any){
-    this.actorToSend = actor;
+    this.actorToViev = actor;
   }
   handleEditActor(actor: any){
-    this.actorToSend = actor;
+    this.actorToEdit = actor;
   }
   getActorList() {
     this.actorsService

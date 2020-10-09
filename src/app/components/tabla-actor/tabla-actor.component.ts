@@ -30,6 +30,6 @@ export class TablaActorComponent implements OnInit {
     this.sendViewActor.emit(actor);
   }
   editActor(actor: any){
-    this.sendDeleteActor.emit(actor);
+    this.sendModifyActor.emit(actor);
   }
 }

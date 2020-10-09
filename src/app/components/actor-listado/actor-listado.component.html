@@ -50,7 +50,7 @@
           <app-tabla-actor 
           [actorsCollection]="actorsList"
           (sendViewActor)="handleViewActor($event)"
-          (sendEditActor)="handleEditActor($event)"
+          (sendModifyActor)="handleEditActor($event)"
           >
         </app-tabla-actor>
         </div>
@@ -59,10 +59,10 @@
       <div class="container">
         <div class="row">
           <app-modificar-actor class="col-md-4"
-           [actorToModify]="actorToSend"
+           [actorToModify]="actorToEdit"
           ></app-modificar-actor>
           <app-detalle-actor class="col-md-4"
-            [actor]="actorToSend"
+            [actor]="actorToViev"
           ></app-detalle-actor>
           <app-borrar-actor class="col-md-4"></app-borrar-actor>
         </div>
