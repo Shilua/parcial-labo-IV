@@ -15,7 +15,6 @@ export class TablaPaisesComponent implements OnInit {
     this.paisService.getData().subscribe((data : any) =>{
       this.paises =data;
     });
-    console.log(this.paises);
    }
  
   ngOnInit(): void {

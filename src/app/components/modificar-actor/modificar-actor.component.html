@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+      <div>
+        <h2>Modificar Elemento</h2>
+        <label>Nombre:</label>
+        <input
+          class="form-control"
+          [(ngModel)]="firstName"
+          value="{{ actorToModify?.data.nombre }}"
+        />
+        <label>Apellido:</label>
+        <input
+          class="form-control"
+          [(ngModel)]="lastName"
+          value="{{ actorToModify?.data.apellido }}"
+        />
+        <label>Sexo:</label>
+        <input
+          class="form-control"
+          [(ngModel)]="sex"
+          value="{{ actorToModify?.data.sexo }}"
+        />
+        <div>
+            <label>Fecha De Nacimiento:</label
+            ><input
+              class="form-control"
+              type="date"
+              [(ngModel)]="date"
+              value="{{ actorToModify?.data.fechaDeNacimiento }}"
+            />
+      </div>
+      <label>Nacionalidad:</label>
+      <input
+          class="form-control"
+          [(ngModel)]="nationality"
+          value="{{ actorToModify?.data.nacionalidad }}"
+        />
+
+        <a
+          class="btn btn-success"
+          role="button"
+          (click)="modifyElement(actorToModify)"
+          >Modificar</a
+        >
+      
+          </div>
+    </div>
+</div>

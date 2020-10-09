@@ -50,6 +50,7 @@ export class ActorAltaComponent implements OnInit {
           fechaDeNacimiento: new Date(this.dateOfBirth),
           sexo: this.gender,
           foto: '',
+          nacionalidad : this.nationality
         },
         this.fileToUpload
       );

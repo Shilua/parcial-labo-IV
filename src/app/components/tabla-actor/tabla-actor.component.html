@@ -1,29 +1,37 @@
-<div class="container">
-  <table >
-    <thead class="table-dark">
-      <th>Imagen</th>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Sexo</th>
-      <th>Fecha de nacimiento</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let actor of actorsCollection" (click)="selectActor(actor)">
-        <td>
-          <img [src]="actor.foto" alt="" style="width: 100px; height: 100px" />
-        </td>
-        <td>{{ actor.data.nombre }}</td>
-        <td>{{ actor.data.apellido }}</td>
-        <td>{{ actor.data.sexo }}</td>
-        <td>
-          {{
-            this.datepipe.transform(
-              actor.data.fechaDeNacimiento.toDate(),
-              "dd/MM/yyyy"
-            )
-          }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container grid">
+  <div class="wrapper" *ngFor="let actor of actorsCollection">
+    <div class="card mb-4 shadow-sm">
+      <img [src]="actor.foto" alt="" style="width: 200px; height: 250px" />
+      <div class="card-body">
+        <p class="card-text">
+          {{ actor.data.nombre }}
+        </p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <button     
+              type="button"
+              class="btn btn-sm btn-outline-success"
+              (click)="deleteActor(actor)"
+            >
+              Borrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-success"
+              (click)="viewDetails(actor)"
+            >
+              Detalle
+            </button>
+            <button
+              type="button"
+              class="btn btn-sm btn-outline-success"
+              (click)="editActor(actor)"
+            >
+              Modificar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

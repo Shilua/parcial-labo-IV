@@ -29,6 +29,9 @@ import { ActorAltaComponent } from './components/actor-alta/actor-alta.component
 import { ActorListadoComponent } from './components/actor-listado/actor-listado.component';
 import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
 import { HttpClientModule } from "@angular/common/http";
+import { DetalleActorComponent } from './components/detalle-actor/detalle-actor.component';
+import { BorrarActorComponent } from './components/borrar-actor/borrar-actor.component';
+import { ModificarActorComponent } from './components/modificar-actor/modificar-actor.component';
 
 
 @NgModule({
@@ -48,6 +51,9 @@ import { HttpClientModule } from "@angular/common/http";
     ActorAltaComponent,
     ActorListadoComponent,
     TablaPaisesComponent,
+    DetalleActorComponent,
+    BorrarActorComponent,
+    ModificarActorComponent,
   ],
   imports: [
     BrowserModule,

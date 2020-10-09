@@ -1,1 +1,72 @@
-<app-tabla-actor [actorsCollection]="actorsList"></app-tabla-actor>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main role="main">
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Listado de Elementos</h1>
+            <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main role="main">
+      <div class="jumbotron">
+        <div class="container">
+          <app-tabla-actor 
+          [actorsCollection]="actorsList"
+          (sendViewActor)="handleViewActor($event)"
+          (sendEditActor)="handleEditActor($event)"
+          >
+        </app-tabla-actor>
+        </div>
+      </div>
+      <hr />
+      <div class="container">
+        <div class="row">
+          <app-modificar-actor class="col-md-4"
+           [actorToModify]="actorToSend"
+          ></app-modificar-actor>
+          <app-detalle-actor class="col-md-4"
+            [actor]="actorToSend"
+          ></app-detalle-actor>
+          <app-borrar-actor class="col-md-4"></app-borrar-actor>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
